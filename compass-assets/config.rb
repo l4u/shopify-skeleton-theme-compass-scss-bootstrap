@@ -25,7 +25,7 @@ javascripts_dir = "javascripts"
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 on_stylesheet_saved do |filename|
-  s = filename + ".liquid"
-  puts "Moving from #{filename} to #{s}"
-  FileUtils.mv(filename, s)
+  move_to = filename + ".liquid"
+  puts "Moving from #{filename} to #{move_to}"
+  FileUtils.mv(filename, move_to)
 end
